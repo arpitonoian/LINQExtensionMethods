@@ -12,7 +12,6 @@ namespace MyLINQ
         private TKey key;
         private IEnumerable<TSource> elements;
         public TKey Key { get => key; }
-        public List<TKey> KeyList { get; }
         public Dictionary<TKey, List<TSource>>.ValueCollection Values { get; }
 
         public MyGroupingEnumerable(TKey tkey, IEnumerable<TSource> telements)
@@ -23,7 +22,6 @@ namespace MyLINQ
 
         public MyGroupingEnumerable(List<TKey> keyList, Dictionary<TKey, List<TSource>>.ValueCollection values)
         {
-            KeyList = keyList;
             Values = values;
         }
 

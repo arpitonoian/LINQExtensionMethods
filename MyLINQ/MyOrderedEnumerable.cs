@@ -9,14 +9,12 @@ namespace MyLINQ
 {
     public class MyOrderedEnumerable<TKey, TSource> : IOrderedEnumerable<TSource>
     {
-
         private IEnumerable<TSource> list;
         public MyOrderedEnumerable(IEnumerable<TSource> source)
         {
             list = source;
         }
 
-        //for implementation interface members
         IOrderedEnumerable<TSource> IOrderedEnumerable<TSource>.CreateOrderedEnumerable<TKey1>(Func<TSource, TKey1> keySelector, IComparer<TKey1> comparer, bool descending)
         {
             throw new NotImplementedException();
@@ -24,7 +22,5 @@ namespace MyLINQ
         public IEnumerator<TSource> GetEnumerator() { return list.GetEnumerator(); }
         IEnumerator IEnumerable.GetEnumerator() { return GetEnumerator(); }
     }
-
-
 }
 
